@@ -1,1 +1,52 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  --main-light-color: #ffffff;
+  --main-dark-color: #000000;
+  --accent-light-color: #f8f1ff;
+  --accent-dark-color: #985ace;
+  margin: 0 auto;
+  font-family: "Inter", "Arial", sans-serif;
+  background-color: var(--main-light-color);
+  color: var(--main-dark-color);
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+.header {
+  width: 80%;
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 20px 0;
+  box-sizing: border-box;
+  border-bottom: 1px solid var(--accent-dark-color);
+}
+
+.footer {
+  width: 80%;
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 20px 0;
+  box-sizing: border-box;
+  border-top: 1px solid var(--accent-dark-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer__text {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.link {
+  text-decoration: none;
+  color: var(--accent-dark-color);
+}
+
+.link:hover {
+  opacity: 0.8;
+}
