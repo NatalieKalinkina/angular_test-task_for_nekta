@@ -1,0 +1,8 @@
+.auth__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 9px;
+  align-items: center;
+  width: 273px;
+}

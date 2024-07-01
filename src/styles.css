@@ -1,10 +1,17 @@
-body {
+html {
+  height: 100%;
   --main-light-color: #ffffff;
   --main-dark-color: #000000;
   --accent-light-color: #f8f1ff;
   --accent-dark-color: #985ace;
+}
+
+body {
+  width: 80%;
+  max-width: 880px;
+  height: 100%;
   margin: 0 auto;
-  font-family: "Inter", "Arial", sans-serif;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
   background-color: var(--main-light-color);
   color: var(--main-dark-color);
   font-size: 16px;
@@ -17,8 +24,6 @@ body {
 }
 
 .header {
-  width: 80%;
-  max-width: 880px;
   margin: 0 auto;
   padding: 20px 0;
   box-sizing: border-box;
@@ -26,8 +31,6 @@ body {
 }
 
 .footer {
-  width: 80%;
-  max-width: 880px;
   margin: 0 auto;
   padding: 20px 0;
   box-sizing: border-box;
