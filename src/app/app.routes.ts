@@ -1,8 +1,8 @@
 import { Routes } from '@angular/router';
-import { AuthorizationComponent } from './authorization/authorization.component';
+import { LoginPageComponent } from './login-page/login-page.component';
 import { DevicesListComponent } from './devices-list/devices-list.component';
 
 export const routes: Routes = [
-  { path: 'auth', component: AuthorizationComponent },
+  { path: '', component: LoginPageComponent },
   { path: 'devices', component: DevicesListComponent },
 ];

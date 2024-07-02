@@ -1,0 +1,29 @@
+<section class="login">
+  <form class="login__form" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="login__inputs">
+      <div>
+        <label>Email</label>
+        <input
+          formControlName="email"
+          class="login__input"
+          type="email"
+          required
+          name="email"
+          placeholder="Введите email"
+        />
+      </div>
+      <div>
+        <label>Пароль</label>
+        <input
+          formControlName="password"
+          class="login__input"
+          type="password"
+          required
+          name="password"
+          placeholder="Введите пароль"
+        />
+      </div>
+    </div>
+    <button type="submit" class="login__submit">Войти</button>
+  </form>
+</section>
