@@ -7,6 +7,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from '../auth/auth.service';
 
 @Component({
@@ -18,6 +19,7 @@ import { AuthService } from '../auth/auth.service';
 })
 export class LoginPageComponent {
   authService = inject(AuthService);
+  router = inject(Router);
 
   form: FormGroup;
 
@@ -30,6 +32,7 @@ export class LoginPageComponent {
 
   onSubmit() {
     this.authService.login(this.form.value).subscribe((data) => {
+      this.router.navigate(['/devices']);
       console.log(data);
     });
   }
