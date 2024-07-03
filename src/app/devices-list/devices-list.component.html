@@ -1,1 +1,20 @@
-<p>devices-list works!</p>
+<section class="devices">
+  <table class="devices__table">
+    <thead>
+      <th>ID</th>
+      <th>Название</th>
+      <th>Дата последней активности</th>
+    </thead>
+    <tbody>
+      @for (device of devicesList; track device.id) {
+      <tr>
+        <td>{{ device.id }}</td>
+        <td>{{ device.name }}</td>
+        <td>
+          {{ device.last_active | date : "dd.MM.yyyy HH:mm" : "UTC+4" }}
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</section>
