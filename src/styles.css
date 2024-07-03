@@ -24,6 +24,11 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+p {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
 .header {
   width: 100%;
   margin: 0 auto;

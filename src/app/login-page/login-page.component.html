@@ -1,4 +1,5 @@
 <section class="login">
+  <p class="login__title">Войдите в систему</p>
   <form class="login__form" [formGroup]="form" (ngSubmit)="onSubmit()">
     <mat-form-field style="width: 100%">
       <mat-label>Введите email</mat-label>
@@ -16,29 +17,16 @@
 
     <mat-form-field style="width: 100%">
       <mat-label>Введите пароль</mat-label>
-      <input
-        matInput
-        formControlName="password"
-        [type]="hide() ? 'password' : 'text'"
-      />
+      <input matInput formControlName="password" type="password" required />
       @if (form.invalid) {
       <mat-error>Поле обязательное</mat-error>
       }
-      <button
-        mat-icon-button
-        matSuffix
-        (click)="clickEvent($event)"
-        [attr.aria-label]="'Hide password'"
-        [attr.aria-pressed]="hide()"
-      >
-        <mat-icon>{{ hide() ? "visibility_off" : "visibility" }}</mat-icon>
-      </button>
     </mat-form-field>
     <button
       mat-flat-button
       type="submit"
       [disabled]="form.invalid"
-      style="width: 100%"
+      style="width: 100%; font-size: large"
     >
       Войти
     </button>

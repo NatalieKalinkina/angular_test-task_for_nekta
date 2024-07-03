@@ -30,12 +30,6 @@ export class LoginPageComponent {
   authService = inject(AuthService);
   router = inject(Router);
 
-  hide = signal(true);
-  clickEvent(event: MouseEvent) {
-    this.hide.set(!this.hide);
-    event.stopPropagation();
-  }
-
   form: FormGroup;
 
   constructor(private formBuilder: FormBuilder) {
