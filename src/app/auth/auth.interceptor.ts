@@ -1,10 +1,14 @@
-import { HttpHandlerFn, HttpInterceptorFn } from '@angular/common/http';
+import {
+  HttpHandlerFn,
+  HttpInterceptorFn,
+  HttpRequest,
+} from '@angular/common/http';
 import { inject } from '@angular/core';
 import { AuthService } from './auth.service';
 
 export const authTokenInterceptor: HttpInterceptorFn = (
-  req: any,
-  next: any
+  req: HttpRequest<any>,
+  next: HttpHandlerFn
 ) => {
   const token: string | null = inject(AuthService).token;
 

@@ -2,14 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { tap } from 'rxjs';
 import { AuthResponse } from './auth.interface';
+import { BASE_API_URL } from '../../utils/consts';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
   http = inject(HttpClient);
-
-  baseUrl: string = 'https://core.nekta.cloud/api/';
 
   token: string | null = null;
 
@@ -23,7 +22,7 @@ export class AuthService {
   login(payload: { email: string | null; password: string | null }) {
     let data = { ...payload, personal_data_access: true };
     return this.http
-      .post<AuthResponse>(`${this.baseUrl}auth/login`, JSON.stringify(data), {
+      .post<AuthResponse>(`${BASE_API_URL}auth/login`, JSON.stringify(data), {
         headers: {
           'Content-Type': 'application/json',
         },
