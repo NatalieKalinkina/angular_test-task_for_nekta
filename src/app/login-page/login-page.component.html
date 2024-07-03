@@ -1,29 +1,46 @@
 <section class="login">
   <form class="login__form" [formGroup]="form" (ngSubmit)="onSubmit()">
-    <div class="login__inputs">
-      <div>
-        <label>Email</label>
-        <input
-          formControlName="email"
-          class="login__input"
-          type="email"
-          required
-          name="email"
-          placeholder="Введите email"
-        />
-      </div>
-      <div>
-        <label>Пароль</label>
-        <input
-          formControlName="password"
-          class="login__input"
-          type="password"
-          required
-          name="password"
-          placeholder="Введите пароль"
-        />
-      </div>
-    </div>
-    <button type="submit" class="login__submit">Войти</button>
+    <mat-form-field style="width: 100%">
+      <mat-label>Введите email</mat-label>
+      <input
+        type="email"
+        matInput
+        placeholder="example@email.com"
+        formControlName="email"
+        required
+      />
+      @if (form.invalid) {
+      <mat-error>Введите email в формате example&#64;email.com</mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field style="width: 100%">
+      <mat-label>Введите пароль</mat-label>
+      <input
+        matInput
+        formControlName="password"
+        [type]="hide() ? 'password' : 'text'"
+      />
+      @if (form.invalid) {
+      <mat-error>Поле обязательное</mat-error>
+      }
+      <button
+        mat-icon-button
+        matSuffix
+        (click)="clickEvent($event)"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide()"
+      >
+        <mat-icon>{{ hide() ? "visibility_off" : "visibility" }}</mat-icon>
+      </button>
+    </mat-form-field>
+    <button
+      mat-flat-button
+      type="submit"
+      [disabled]="form.invalid"
+      style="width: 100%"
+    >
+      Войти
+    </button>
   </form>
 </section>

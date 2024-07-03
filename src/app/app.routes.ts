@@ -4,7 +4,7 @@ import { DevicesListComponent } from './devices-list/devices-list.component';
 import { canActivateAuth } from './auth/access.guard';
 
 export const routes: Routes = [
-  { path: 'login', component: LoginPageComponent },
+  { path: '', component: LoginPageComponent },
   {
     path: 'devices',
     component: DevicesListComponent,

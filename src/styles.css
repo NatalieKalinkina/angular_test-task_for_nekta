@@ -1,8 +1,8 @@
+@import "@angular/material/prebuilt-themes/cyan-orange.css";
+
 html {
-  --main-light-color: #ffffff;
-  --main-dark-color: #000000;
-  --accent-light-color: #f8f1ff;
-  --accent-dark-color: #985ace;
+  --main-accent-color: #00dddd;
+  --second-accent-color: #ffb4ab;
 }
 
 body {
@@ -15,8 +15,6 @@ body {
   align-items: center;
   margin: 0 auto;
   font-family: Roboto, "Helvetica Neue", sans-serif;
-  background-color: var(--main-light-color);
-  color: var(--main-dark-color);
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -31,7 +29,7 @@ body {
   margin: 0 auto;
   padding: 20px 0;
   box-sizing: border-box;
-  border-bottom: 1px solid var(--accent-dark-color);
+  border-bottom: 1px solid var(--main-accent-color);
   font-weight: 500;
 }
 
@@ -40,7 +38,7 @@ body {
   margin: 0 auto;
   padding: 20px 0;
   box-sizing: border-box;
-  border-top: 1px solid var(--accent-dark-color);
+  border-top: 1px solid var(--main-accent-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -53,18 +51,9 @@ body {
 
 .link {
   text-decoration: none;
-  color: var(--accent-dark-color);
+  color: var(--second-accent-color);
 }
 
 .link:hover {
   opacity: 0.8;
 }
-
-/* html,
-body {
-  height: 100%;
-}
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
-} */
