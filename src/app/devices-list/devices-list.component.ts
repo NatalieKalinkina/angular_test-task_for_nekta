@@ -12,8 +12,11 @@ export class DevicesListComponent {
   devicesService = inject(DevicesService);
 
   ngOnInit() {
-    this.devicesService.getDevices().subscribe((data) => {
-      console.log(data);
+    this.devicesService.getDevices().subscribe((response) => {
+      localStorage.setItem(
+        'DevicesData',
+        JSON.stringify(response.data.metering_devices.data)
+      );
     });
   }
 }

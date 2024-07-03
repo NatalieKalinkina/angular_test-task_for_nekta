@@ -13,21 +13,14 @@ export class DevicesService {
   devicesData: any;
 
   getDevices() {
-    return this.http
-      .post<DevicesResponse>(
-        `${BASE_API_URL}device/metering_devices`,
-        JSON.stringify(DEVICES_REQ_DATA),
-        {
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        }
-      )
-      .pipe(
-        tap((response) => {
-          this.devicesData = response.data.metering_devices.data;
-          localStorage.setItem('devicesData', this.devicesData);
-        })
-      );
+    return this.http.post<DevicesResponse>(
+      `${BASE_API_URL}device/metering_devices`,
+      JSON.stringify(DEVICES_REQ_DATA),
+      {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      }
+    );
   }
 }
