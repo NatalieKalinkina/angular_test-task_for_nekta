@@ -1,4 +1,5 @@
 @import "@angular/material/prebuilt-themes/cyan-orange.css";
+@import "./normalize.css";
 
 html {
   --main-accent-color: #00dddd;

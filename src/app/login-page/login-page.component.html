@@ -17,7 +17,21 @@
 
     <mat-form-field style="width: 100%">
       <mat-label>Введите пароль</mat-label>
-      <input matInput formControlName="password" type="password" required />
+      <input
+        matInput
+        formControlName="password"
+        [type]="isPasswordHidden() ? 'password' : 'text'"
+        required
+      />
+      <button
+        mat-icon-button
+        matSuffix
+        (click)="isPasswordHidden.set(!isPasswordHidden())"
+      >
+        <mat-icon>{{
+          isPasswordHidden() ? "visibility_off" : "visibility"
+        }}</mat-icon>
+      </button>
       @if (form.invalid) {
       <mat-error>Поле обязательное</mat-error>
       }

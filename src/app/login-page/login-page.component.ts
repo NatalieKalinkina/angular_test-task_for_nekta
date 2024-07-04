@@ -30,6 +30,8 @@ export class LoginPageComponent {
   authService = inject(AuthService);
   router = inject(Router);
 
+  isPasswordHidden = signal(true);
+
   form: FormGroup;
 
   constructor(private formBuilder: FormBuilder) {
