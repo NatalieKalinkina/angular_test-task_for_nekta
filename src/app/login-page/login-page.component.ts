@@ -62,7 +62,7 @@ export class LoginPageComponent {
         })
       )
       .subscribe(() => {
-        this.router.navigate(['/devices']);
+        this.router.navigate(['/devices'], { replaceUrl: true });
       });
   }
 }

@@ -10,4 +10,5 @@ export const routes: Routes = [
     component: DevicesListComponent,
     canActivate: [canActivateAuth],
   },
+  { path: "**", redirectTo: 'devices' },
 ];
