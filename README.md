@@ -1,5 +1,7 @@
 # SPA на Angular 
 
+[Деплой](https://angular-nekta.onrender.com/)
+
 ## Локальный запуск:
 
 #### Клонировать репозиторий:
