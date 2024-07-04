@@ -12,6 +12,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { catchError } from 'rxjs/operators';
+import { throwError } from 'rxjs/internal/observable/throwError';
 
 @Component({
   selector: 'app-login',
@@ -34,6 +36,8 @@ export class LoginPageComponent {
 
   form: FormGroup;
 
+  errorMessage: string = '';
+
   constructor(private formBuilder: FormBuilder) {
     this.form = this.formBuilder.group({
       email: new FormControl(null, [Validators.required, Validators.email]),
@@ -42,9 +46,23 @@ export class LoginPageComponent {
   }
 
   onSubmit() {
-    this.authService.login(this.form.value).subscribe((data) => {
-      this.router.navigate(['/devices']);
-      console.log(data);
-    });
+    this.isPasswordHidden.set(true);
+    this.authService
+      .login(this.form.value)
+      .pipe(
+        catchError((error) => {
+          if (error.status === 400) {
+            this.errorMessage = `Неверный логин или пароль`;
+          } else {
+            this.errorMessage = 'На сервере произошла ошибка';
+          }
+          return throwError(
+            () => new Error('Что-то пошло не так. Попробуйте позже')
+          );
+        })
+      )
+      .subscribe(() => {
+        this.router.navigate(['/devices']);
+      });
   }
 }

@@ -1,4 +1,7 @@
 <section class="devices">
+  @if (!isDataReceived() && !isError()) {
+  <mat-spinner></mat-spinner>
+  } @if (isDataReceived()) {
   <table mat-table [dataSource]="devicesList" class="mat-elevation-z8">
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef>ID</th>
@@ -19,4 +22,32 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   </table>
+  } @if (isError()){
+  <p
+    style="
+      font-size: 12px;
+      text-align: center;
+      margin-top: 10px;
+      color: var(--second-accent-color);
+      width: max-content;
+    "
+  >
+    {{ errorMessage }}
+  </p>
+  } @if (isDataReceived() || isError()) {
+  <mat-icon
+    aria-hidden="false"
+    aria-label="Выйти"
+    fontIcon="logout"
+    (click)="logout()"
+    style="
+      position: absolute;
+      top: 0;
+      right: -60px;
+      color: var(--second-accent-color);
+      cursor: pointer;
+    "
+  >
+  </mat-icon>
+  }
 </section>
