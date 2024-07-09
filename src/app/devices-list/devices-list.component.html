@@ -16,7 +16,9 @@
     <ng-container matColumnDef="last_active">
       <th mat-header-cell *matHeaderCellDef>Дата последней активности</th>
       <td mat-cell *matCellDef="let device">
-        {{ device.last_active | date : "dd.MM.YYYY hh:mm" }}
+        @if (device.last_active !== null) {
+          {{ device.last_active * 1000 | date : "dd.MM.YYYY hh:mm" }}
+        }
       </td>
     </ng-container>
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
