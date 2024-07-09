@@ -8,6 +8,7 @@ import { throwError } from 'rxjs/internal/observable/throwError';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatIconModule } from '@angular/material/icon';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-devices-list',
@@ -18,6 +19,7 @@ import { Router } from '@angular/router';
 })
 export class DevicesListComponent {
   devicesService = inject(DevicesService);
+  authService = inject(AuthService);
 
   router = inject(Router);
 
@@ -51,7 +53,7 @@ export class DevicesListComponent {
   }
 
   logout() {
-    localStorage.clear();
+    this.authService.logout();
     this.router.navigate([''], { replaceUrl: true });
   }
 }

@@ -34,4 +34,9 @@ export class AuthService {
         })
       );
   }
+
+  logout() {
+    this.token = null;
+    localStorage.clear();
+  }
 }
