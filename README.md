@@ -2,6 +2,10 @@
 
 [Деплой](https://angular-test-task-for-nekta.onrender.com/)
 
+Для входа:  
+логин - demo@nekta.cloud  
+пароль - qwertyqwerty  
+
 ## Реализовано:
 - компонент авторизации по e-mail и паролю:
   - валидация формы,
